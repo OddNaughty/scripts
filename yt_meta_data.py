@@ -1,9 +1,15 @@
-#!/usr/local/bin/python3
-import os
-from Tagging import Tagging
+import argparse
+from MyMusic import MyMusic
 
-dir_path = "/home/odn/Bureau/NewSound"
-mytag = Tagging()
-for file in sorted([f for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f))]):
-    mytag.song_to_directory(dir_path, file)
+def main(url):
+    """
+    Requirements: youtube_dl, mutagen
+    """
+    mytag = MyMusic()
+    mytag.get_song_from_yt(url)
 
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Script to download a youtube/soundcloud video and convert to mp3")
+    parser.add_argument('url')
+    args = parser.parse_args()
+    main(args.url)
