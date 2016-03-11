@@ -1,4 +1,5 @@
 import os, shutil, subprocess, sys
+import mutagen, mutagen.id3
 from mutagen.easyid3 import EasyID3
 from youtube_dl import YoutubeDL
 
@@ -20,7 +21,11 @@ class MyMusic(object):
         Edit the mp3 file (filename) metadatas if needed and put it in path/Artist/{Album}/Title
         """
         datas = filename.split(' - ')
-        file = EasyID3(os.path.join(path, filename))
+        try:
+            file = EasyID3(os.path.join(path, filename))
+        except mutagen.id3.ID3NoHeaderError:
+            file = mutagen.File(os.path.join(path, filename), easy=True)
+            file.add_tags()
         datas = {
             "title": file.get("title", []) or [(datas[2][:-4] if len(datas) > 2 else datas[1][:-4])],
             "artist": file.get("artist", []) or [(datas[1] if len(datas) > 2 else datas[0])],
