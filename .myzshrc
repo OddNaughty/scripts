@@ -63,7 +63,6 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
 source $ZSH/oh-my-zsh.sh
 
-export GITHUB_OAUTH_TOKEN="492944046d0a97768b62fb158be568a5e7c2e0ab"
 
 ## HOMEBREW CONFIGURATION
 export HOMEBREW_CACHE=/tmp/mycache
@@ -138,3 +137,6 @@ alias gcc="clang"
 alias clear_cmake="rm -r CMakeCache.txt CMakeFiles cmake_install.cmake Makefile"
 alias gitc="python3 ~/scripts/gitclone.py"
 alias gpgh="git push origin && git push github"
+
+# Secret env variables
+source ~/.secret_env
