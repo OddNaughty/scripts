@@ -19,7 +19,7 @@ class MyMusic(object):
         """
         self.old_tags = {}
         self.yt_path = yt_path
-        self.genres = ["Acid", "Acidcore", "Tribe", "Mental", "Tekno", "Hardtek", "Raggatek", "Tribecore", "Hardcore", "Frenchcore", "Electro", "Dubstep", "Drum'n'Bass", "Crossbreed", "Psytrance", "Hi-Tech", "Psytribe", "Trap", "Rock Psychedelique", "Hip-Hop", "Rap"]
+        self.genres = ["Acid", "Acidcore", "Tribe", "Mental", "Tekno", "Hardtek", "Raggatek", "Tribecore", "Hardstyle", "Hardcore", "Frenchcore", "Electro", "Melodic Techno", "Dubstep", "Drum'n'Bass", "Crossbreed", "Psytrance", "Hi-Tech", "Psytribe", "Trap", "Rock Psychedelique", "Hip-Hop", "Rap"]
 
     def song_to_directory(self, path, filename, album="", genres=[], tracknumber=""):
         """

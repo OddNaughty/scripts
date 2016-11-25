@@ -64,13 +64,14 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 source $ZSH/oh-my-zsh.sh
 
 
-## HOMEBREW CONFIGURATION
-export HOMEBREW_CACHE=/tmp/mycache
-export HOMEBREW_TEMP=/tmp/mytemp
-mkdir -p /tmp/mycache /tmp/mytemp
+export PATH="$HOME/.msc:$HOME/.brew/bin:$HOME/Library/Python/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:$PATH"
 
-export PATH="$HOME/.brew/bin:$HOME/Library/Python/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:$PATH"
+## Virtualenvwrapper
 
+export WORKON_HOME="$HOME/.venv"
+export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
+mkdir -p $WORKON_HOME
+source $HOME/Library/Python/3.5/bin/virtualenvwrapper.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
