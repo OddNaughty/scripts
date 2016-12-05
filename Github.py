@@ -1,6 +1,7 @@
 import os
 import requests
 
+
 class Github(object):
     """
     A Github class to use Github API
@@ -47,6 +48,6 @@ class Github(object):
         return self.do_get_request(endpoint)
 
     def create_repo(self, name, description="Repo created by Github API", private=False, auto_init=True, **kwargs):
-        repo_object = {'name': name, 'description': description, 'private' : private, 'auto_init': auto_init}
+        repo_object = {'name': name, 'description': description, 'private': private, 'auto_init': auto_init}
         endpoint = "user/repos"
         return self.do_post_request(endpoint, {**repo_object, **kwargs})
